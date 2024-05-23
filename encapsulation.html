@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*--using closures
+        function BankAccount(accountNumber,accountHolder,balance)
+        {
+            let a1=accountNumber   //a1 ,a2,a3 are private variables
+            let a2=accountHolder
+            let a3=balance
+
+            function showAccountDetails() //private method which shows account details
+            {
+                console.log(`AccounNumber:${a1}`)
+                console.log(`AccountHolder:${a2}`)
+                console.log(`Balance:${a3}`)
+            }
+
+            function deposit(amount)   //public method
+            {  
+                //a3=a3+amount
+
+                a3+=amount
+                showAccountDetails()
+            }
+            function withdraw(amount)
+            {
+                if(a3>=amount)
+                {
+                    a3=a3-amount
+                    showAccountDetails()
+                }
+                else
+                {
+                    console.log("insufficient balance")
+                }
+            }
+
+            return  {
+                showAccountDetails:showAccountDetails,
+                deposit:deposit,
+                withdraw:withdraw
+            }
+
+        }
+
+        let b1=new BankAccount(123456,'john',1000)
+        //b1.showAccountDetails()
+        b1.deposit(500)
+
+        //b1.withdraw(1000)
+        b1.withdraw(2000)
+        -----*/
+
+
+        /*---using classes
+        class BankAccount
+        {
+            constructor(accounNumber,accountHolder,balance)
+            {
+                this.a1=accounNumber
+                this.a2=accountHolder
+                this.a3=balance
+            }
+
+            showAccountDetails()
+            {
+                console.log(`AccountNumber:${this.a1}`)
+                console.log(`AccountHolder:${this.a2}`)
+                console.log(`Balance:${this.a3}`)
+            }
+
+            deposit(amount)
+            {
+                this.a3+=amount
+                this.showAccountDetails()
+
+            }
+
+            withdraw(amount)
+            {
+                if(this.a3>=amount)
+                {
+                    this.a3-=amount
+                    this.showAccountDetails()
+                }
+                else
+                {
+                    console.log("insufficient balance")
+                }
+            }
+        }
+
+        let b1=new BankAccount(123456,"john",1000)
+        b1.showAccountDetails()
+        b1.deposit(1000)
+       // b1.withdraw(2000)
+        b1.withdraw(3000)
+        ------*/
+    </script>
+</body>
+</html>

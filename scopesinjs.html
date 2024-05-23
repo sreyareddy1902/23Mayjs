@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*----private scope
+        let employee=(function(){
+
+            //private variable
+            let empName='';   //we can access this only within this function
+            return class{ //this is the way to access private variable
+                constructor(name)
+                {
+                    empName=name
+                }
+
+                //private method
+                getPrivateName()
+                {
+                    return empName;
+                }
+            }
+        })();
+
+        let e1=new employee('john')
+
+        //can access private method
+        console.log(e1.getPrivateName())  //john
+
+        //we cannot access this way
+        console.log(e1.PrivateName)   //undefined
+
+        ------*/
+
+
+
+        /*----public scope
+        let empName="john"   //global scope  we can access from anywhere
+        class employee{
+            constructor()
+            {
+                //public method
+                this.getName=function() //getName is public method
+                {
+                    return empName
+                }
+            }
+        }
+
+        let e1=new employee()
+        console.log(e1.getName())
+        ----*/
+
+
+        
+        /*-----protected scope
+        let protectedMap=new WeakMap() //with in this we are having with key-value pair
+        class person{
+            constructor(name)
+            {
+                protectedMap.set(this,{
+
+                        name
+
+                });
+            }
+
+            //protected method
+            getName()
+            {
+                return protectedMap.get(this).name
+            }
+        }
+
+        class employee extends person{
+            constructor(name,role)
+            {
+                super(name)
+                protectedMap.get(this).role=role
+            }
+
+            getRole()
+            {
+                return protectedMap.get(this).role
+            }
+        }
+
+        let e1=new employee('john','manager')
+        console.log(e1.getName())
+        console.log(e1.getRole())
+        -----*/
+    </script>
+</body>
+</html>
